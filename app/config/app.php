@@ -125,6 +125,7 @@ return array(
 		'anlutro\cURL\Laravel\cURLServiceProvider',
 		'Laracasts\Validation\ValidationServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
+		'MovieApp\Providers\BackendServiceProvider',
 
 	),
 
