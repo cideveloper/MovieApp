@@ -1,0 +1,76 @@
+<div class="page-header ng-cloak" ng-cloak>
+  <h1>Movies <small>[{{ count }}] ({{ pager }})</small></h1>
+</div>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" href="">
+          Filters:
+        </a>
+        <span class="label label-primary">{{ search.genre }}</span> <span class="label label-success">{{ search.quality }}</span>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <form class="form-inline clearfix" role="form">
+          <div class="form-group">
+            <label for="genre">Genre: </label>
+            <select class="form-control" ng-model="search.genre" name="genre">
+              <option>All</option>
+              <option ng-repeat="genre in genres">{{ genre }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quality">Quality: </label>
+            <select class="form-control" ng-model="search.quality" name="quality">
+              <option>All</option>
+              <option>720p</option>
+              <option>1080p</option>
+              <option>3D</option>
+            </select>
+          </div>
+          <div class="pull-right">
+            <div class="form-group">
+              <label for="limit">Display per Page: </label>
+              <select class="form-control" ng-model="search.limit" name="limit">
+                <option selected="selected">20</option>
+                <option>30</option>
+                <option>40</option>
+                <option>50</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sort">Sorty By: </label>
+              <select class="form-control" ng-model="search.sort" name="sort">
+                <option>date</option>
+                <option>seeds</option>
+                <option>peers</option>
+                <option>size</option>
+                <option>alphabet</option>
+                <option>rating</option>
+                <option>downloaded</option>
+                <option>year</option>
+              </select>
+            </div>
+          </div>
+        </form>
+        <form role="form" style="margin-top: 20px;">
+          <div class="form-group">
+            <label for="keywords">Filter Below Results</label>
+            <input type="text" class="form-control" id="keywords" ng-model="filter.MovieTitleClean" placeholder="Type in movie title...">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="movie_container clearfix ng-cloak" ng-cloak>
+  <a class="movie_box pull-left animate-repeat" ng-href="#/movie/{{movie.MovieID}}" ng-repeat="movie in movies | filter: filter">
+    <img class="movie_cover img-thumbnail" ng-src="{{movie.CoverImage}}" alt="{{movie.MovieTitle}}">
+    <div class="movie_meta">
+      <span class="movie_title text-primary">{{movie.MovieTitleClean}}</span>
+      <span class="movie_year text-muted">{{movie.MovieYear}}</span>
+    </div>
+  </a>
+</div>
