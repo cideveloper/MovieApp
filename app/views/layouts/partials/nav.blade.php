@@ -16,8 +16,16 @@
           <ul class="nav navbar-nav navbar-right">
             @if ($currentUser)
               <li>{{ link_to_route('movies', 'Browse Movies') }}</li>
-              <li><a href="#">{{ $currentUser->email }}</a></li>
-              <li>{{ link_to_route('logout_path', 'Log Out') }}</li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $currentUser->email }} <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li>{{ link_to_route('logout_path', 'Log Out') }}</li>
+                </ul>
+              </li>
             @else
               <li>{{ link_to_route('login_path', 'Log In') }}</li>
               <li>{{ link_to_route('register_path', 'Register') }}</li>
