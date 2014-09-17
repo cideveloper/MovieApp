@@ -6,6 +6,7 @@
 	"require": {
 		"laravel/framework"		 : "4.2.*",
 		"anlutro/curl"         : "dev-master",
+		"guzzlehttp/guzzle"    : "~4.0",
 		"laracasts/validation" : "~1.0",
 		"laracasts/flash"      : "~1.0",
 		"way/form"             : "dev-master"

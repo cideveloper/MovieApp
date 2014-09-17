@@ -4,20 +4,20 @@ use MovieApp\Forms\RegistrationForm;
 
 class RegistrationController extends \BaseController {
 
-    /**
-     * @var RegistrationForm
-     */
-    private $registrationForm;
+  /**
+   * @var RegistrationForm
+   */
+  private $registrationForm;
 
-    /**
-     * Constructor
-     *
-     * @param RegistrationForm $registrationForm
-     */
-    function __construct(RegistrationForm $registrationForm)
-    {
-	    $this->registrationForm = $registrationForm;
-    }
+  /**
+   * Constructor
+   *
+   * @param RegistrationForm $registrationForm
+   */
+  function __construct(RegistrationForm $registrationForm)
+  {
+    $this->registrationForm = $registrationForm;
+  }
 
 	/**
 	 * Show the form for creating a new resource.

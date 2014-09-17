@@ -30,4 +30,9 @@ class PagesController extends \BaseController {
 
   }
 
+  public function error404($code)
+  {
+    return Response::view('errors.missing', array('code' => $code), 404);
+  }
+
 }
