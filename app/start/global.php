@@ -61,6 +61,11 @@ App::error(function(Symfony\Component\HttpKernel\Exception\NotFoundHttpException
    return Redirect::route('404', array('code' => $code));
 });
 
+App::error(function(MovieApp\Exceptions\TokenMismatchException $exception, $code)
+{
+   return Redirect::back()->withInput()->withErrors($exception->getErrors());
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

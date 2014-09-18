@@ -10,13 +10,13 @@
     <h1>Edit Profile</h1>
   </div>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-6 col-lg-4">
       @include('layouts.partials.errors')
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-4">
-      {{ Form::model($user, ['method' => 'PATCH' ,'route' => ['profile.update', $user->id], 'name' => 'profileUpdateForm']) }}
+    <div class="col-md-6 col-lg-4">
+      {{ Form::model($user, ['name' => 'profileUpdateForm']) }}
 
           <!-- Name Form Input -->
           <div class="form-group">

@@ -65,14 +65,26 @@ Route::get('movie/{id}', [
  * User Management
  */
 
-Route::resource('profile', 'ProfileController', ['only' => ['edit', 'update']]);
+//Route::resource('profile', 'ProfileController', ['only' => ['edit', 'update']]);
+Route::group(array('prefix' => 'profile'), function()
+{
+  Route::get('edit', [
+    'as' => 'profile.edit',
+    'uses' => 'ProfileController@getEdit'
+  ]);
+
+  Route::post('edit', [
+    'as' => 'profile.edit',
+    'uses' => 'ProfileController@postEdit'
+  ]);
+});
 
 /**
  * Misc
  */
 Route::get('404/{code}', [
-    'as' => '404',
-    'uses' => 'PagesController@error404'
+  'as' => '404',
+  'uses' => 'PagesController@error404'
 ]);
 /*
 Route::get('/', [

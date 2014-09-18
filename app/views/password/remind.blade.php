@@ -5,12 +5,12 @@
     <h1>Need to reset your password?</h1>
   </div>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-6 col-lg-4">
       @include('layouts.partials.errors')
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-6 col-lg-4">
       {{ Form::open() }}
           <!-- Email Form Input -->
           <div class="form-group">

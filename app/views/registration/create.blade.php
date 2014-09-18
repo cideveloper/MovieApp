@@ -5,12 +5,12 @@
     <h1>Register</h1>
   </div>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-6 col-lg-4">
       @include('layouts.partials.errors')
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-6 col-lg-4">
       {{ Form::open(['route' => 'register_path', 'name' => 'registrationForm', 'ng-controller' => 'RegistrationFormController']) }}
 
           <!-- Email Form Input -->

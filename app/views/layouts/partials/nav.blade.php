@@ -19,7 +19,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $currentUser->email }} <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li>{{ link_to_route('profile.edit', 'Edit Profile', ['profile' => $currentUser->id]) }}</li>
+                  <li>{{ link_to_route('profile.edit', 'Edit Profile') }}</li>
                   <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>

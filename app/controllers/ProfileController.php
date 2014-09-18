@@ -5,7 +5,7 @@ class ProfileController extends \BaseController {
   public function __construct()
   {
 		$this->beforeFilter('auth');
-		$this->beforeFilter('csrf', array('on' => ['post', 'patch']));
+		$this->beforeFilter('csrf', array('on' => ['post']));
   }
 
 	/**
@@ -15,7 +15,7 @@ class ProfileController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function getEdit()
 	{
 		$user = Auth::user();
 		return View::make('profile.edit', compact('user'));
@@ -28,8 +28,10 @@ class ProfileController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function postEdit()
 	{
+
+		$id = Auth::user()->id;
 
 		$user = User::findOrFail($id);
 
@@ -39,7 +41,7 @@ class ProfileController extends \BaseController {
 
 		Flash::message('User Updated!');
 
-		return Redirect::home();
+		return Redirect::route('profile.edit');
 
 	}
 
