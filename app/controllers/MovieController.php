@@ -24,32 +24,17 @@ class MovieController extends \BaseController {
 	public function index()
   {
 
-    $page = Input::get('page', 1);
-    $sort = Input::get('sort', "date");
-    $limit = Input::get('limit', 24);
-    $quality = Input::get('quality', "All");
-    $genre = Input::get('genre', "All");
-
-    $filter_array = [
-      'page' => $page,
-      'sort' => $sort,
-      'limit' => $limit,
-      'quality' => $quality,
-      'genre' => $genre
+    $filters = [
+      'set' => Input::get('page', 1),
+      'sort' => Input::get('sort', "date"),
+      'limit' => Input::get('limit', 24),
+      'quality' => Input::get('quality', "All"),
+      'genre' => Input::get('genre', "All")
     ];
 
-    $movies = $this->movies->getAll($genre, $quality, $limit, $sort, $page);
+    $movies_data = $this->movies->getAll($filters);
+    return View::make('movies.movies', $movies_data);
 
-    $paginator = Paginator::make((array) $movies, $movies->MovieCount, $limit);
-
-    $view_array = [
-      'movies' => $movies,
-      'paginator' => $paginator,
-      'genres' => $this->movies->getGenres(),
-      'filter' => $filter_array
-    ];
-
-    return View::make('movies.movies', $view_array);
 	}
 
 

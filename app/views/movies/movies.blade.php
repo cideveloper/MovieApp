@@ -21,10 +21,8 @@
           <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" href="">
             Filters:
           </a>
-          <span class="label label-primary">{{ $filter['genre'] }}</span> <span class="label label-success">{{ $filter['quality'] }}</span>
-          <?php
-          //var_dump($filter);
-          ?>
+          <span class="label label-primary">{{ $filter['genre'] }}</span>
+          <span class="label label-success">{{ $filter['quality'] }}</span>
         </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in">

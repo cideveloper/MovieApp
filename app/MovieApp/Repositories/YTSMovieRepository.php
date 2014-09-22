@@ -2,6 +2,7 @@
 
 use Cache;
 use cURL;
+use Paginator;
 
 class YTSMovieRepository implements MovieRepositoryInterface {
 
@@ -31,15 +32,11 @@ class YTSMovieRepository implements MovieRepositoryInterface {
     'Western' => 'Western'
     ];
 
-  public function getAll($genre, $quality, $limit, $sort, $set)
+  public function getAll($filters)
   {
 
     $url = "https://yts.re/api/list.json?";
-    $url .= "genre=" . $genre;
-    $url .= "&quality=" . $quality;
-    $url .= "&limit=" . $limit;
-    $url .= "&sort=" . $sort;
-    $url .= "&set=" . $set;
+    $url .= http_build_query($filters);
 
     if (Cache::has($url))
     {
@@ -51,7 +48,21 @@ class YTSMovieRepository implements MovieRepositoryInterface {
       Cache::put($url, $response->body, 60);
       $movies = json_decode($response->body);
     }
-    return $movies;
+
+    extract($filters);
+
+    $paginator = Paginator::make((array) $movies, $movies->MovieCount, $filters['limit']);
+
+    unset($filters['set']);
+
+    return [
+      'movies' => $movies,
+      'paginator' => $paginator,
+      'genres' => $this->getGenres(),
+      'filter' => $filters,
+      'url' => $url
+    ];
+
 
   }
 

@@ -2,7 +2,7 @@
 
 interface MovieRepositoryInterface {
 
-  public function getAll($genre, $quality, $limit, $sort, $set);
+  public function getAll($filters);
   public function find($id);
   public function getGenres();
 
