@@ -51,7 +51,7 @@ Route::controller('password', 'RemindersController');
 /**
  * Movies
  */
-Route::get('movies/{genre?}/{quality?}/{limit?}/{sort?}', [
+Route::get('movies', [
   'as' => 'movies',
   'uses' => 'MovieController@index'
 ]);

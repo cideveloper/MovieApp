@@ -15,10 +15,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-sm-4">
       <img src="{{ $movie->LargeCover }}" alt="">
     </div>
-    <div class="col-md-9">
+    <div class="col-sm-8">
       <div class="page-header">
         <h3>Description</h3>
       </div>

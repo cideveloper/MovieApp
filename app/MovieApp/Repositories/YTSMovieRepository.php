@@ -5,7 +5,33 @@ use cURL;
 
 class YTSMovieRepository implements MovieRepositoryInterface {
 
-  public function getAll($genre, $quality, $limit, $sort)
+  protected $genres = [
+    'All' => 'All',
+    'Action' => 'Action',
+    'Adventure' => 'Adventure',
+    'Animation' => 'Animation',
+    'Biography' => 'Biography',
+    'Comedy' => 'Comedy',
+    'Crime' => 'Crime',
+    'Documentary' => 'Documentary',
+    'Drama' => 'Drama',
+    'Family' => 'Family',
+    'Fantasy' => 'Fantasy',
+    'Film-Noir' => 'Film-Noir',
+    'History' => 'History',
+    'Horror' => 'Horror',
+    'Music' => 'Music',
+    'Musical' => 'Musical',
+    'Mystery' => 'Mystery',
+    'Romance' => 'Romance',
+    'Sci-Fi' => 'Sci-Fi',
+    'Sport' => 'Sport',
+    'Thriller' => 'Thriller',
+    'War' => 'War',
+    'Western' => 'Western'
+    ];
+
+  public function getAll($genre, $quality, $limit, $sort, $set)
   {
 
     $url = "https://yts.re/api/list.json?";
@@ -13,6 +39,7 @@ class YTSMovieRepository implements MovieRepositoryInterface {
     $url .= "&quality=" . $quality;
     $url .= "&limit=" . $limit;
     $url .= "&sort=" . $sort;
+    $url .= "&set=" . $set;
 
     if (Cache::has($url))
     {
@@ -43,6 +70,11 @@ class YTSMovieRepository implements MovieRepositoryInterface {
       $movie = json_decode($response->body);
     }
     return $movie;
+  }
+
+  public function getGenres()
+  {
+    return $this->genres;
   }
 
 }
