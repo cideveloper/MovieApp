@@ -19,10 +19,6 @@
       <div class="col-md-3 col-lg-2">
         <div class="sidebar">
           @section('sidebar')
-            <div class="page-header">
-              <h1>Welcome</h1>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim fuga, iure illo provident. Facere sunt harum sapiente ipsum veritatis recusandae dolorem inventore, magni consequatur labore expedita non officia velit placeat.</p>
           @show
         </div>
       </div>

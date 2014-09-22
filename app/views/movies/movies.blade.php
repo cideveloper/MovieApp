@@ -1,9 +1,22 @@
 @extends('layouts.default')
 
 @section('sidebar')
-    @parent
+  @parent
 
-    <p>All Movies.</p>
+  <div class="page-header">
+    <h1>Upcoming</h1>
+  </div>
+  <div class="list-group">
+    @foreach ($upcoming as $upcoming_movie)
+      <a href="{{ $upcoming_movie->ImdbLink }}" class="list-group-item" target="_blank">
+        <h4 class="list-group-item-heading">{{ $upcoming_movie->MovieTitle }}</h4>
+        <p class="list-group-item-text">
+          <img class="img-thumbnail" src="{{ $upcoming_movie->MovieCover }}" alt="{{ $upcoming_movie->MovieTitle }}">
+        </p>
+      </a>
+    @endforeach
+  </div>
+
 @stop
 
 @section('content')

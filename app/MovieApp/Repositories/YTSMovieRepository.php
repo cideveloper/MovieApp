@@ -60,9 +60,29 @@ class YTSMovieRepository implements MovieRepositoryInterface {
       'paginator' => $paginator,
       'genres' => $this->getGenres(),
       'filter' => $filters,
-      'url' => $url
+      'url' => $url,
+      'upcoming' => $this->getUpcoming()
     ];
 
+
+  }
+
+  public function getUpcoming()
+  {
+    $url = "https://yts.re/api/upcoming.json";
+
+    if (Cache::has($url))
+    {
+      $upcoming = json_decode(Cache::get($url));
+    }
+    else
+    {
+      $response = cURL::get($url);
+      Cache::put($url, $response->body, 60);
+      $upcoming = json_decode($response->body);
+    }
+
+    return $upcoming;
 
   }
 
