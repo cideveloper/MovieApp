@@ -1,16 +1,12 @@
-@extends('layouts.default')
+@extends('layouts.full')
 
 @section('content')
-  <div class="page-header">
-    <h1>Reset Your Password</h1>
-  </div>
   <div class="row">
-    <div class="col-md-6 col-lg-4">
+    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <div class="page-header">
+        <h1>Reset Your Password</h1>
+      </div>
       @include('layouts.partials.errors')
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-lg-4">
       {{ Form::open() }}
         {{ Form::hidden('token', $token) }}
         <!-- Email Form Input -->

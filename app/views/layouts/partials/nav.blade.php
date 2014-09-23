@@ -14,6 +14,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+            <li class="visible-lg-block"><a href="#">Large</a></li>
+            <li class="visible-md-block"><a href="#">Medium</a></li>
+            <li class="visible-sm-block"><a href="#">Small</a></li>
             @if ($currentUser)
               <li>{{ link_to_route('movies', 'Browse Movies') }}</li>
               <li class="dropdown">
