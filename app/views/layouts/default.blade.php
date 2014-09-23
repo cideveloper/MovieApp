@@ -43,6 +43,7 @@
   <script>
     $('#flash-overlay-modal').modal();
     //$('.movie_box').popover();
+    $('.collapse').collapse()
   </script>
 </body>
 </html>

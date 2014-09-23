@@ -29,7 +29,8 @@ class MovieController extends \BaseController {
       'sort' => Input::get('sort', "date"),
       'limit' => Input::get('limit', 24),
       'quality' => Input::get('quality', "All"),
-      'genre' => Input::get('genre', "All")
+      'genre' => Input::get('genre', "All"),
+      'keywords' => Input::get('keywords', "")
     ];
 
     $movies_data = $this->movies->getAll($filters);

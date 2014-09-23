@@ -2,8 +2,7 @@
 
 @section('sidebar')
     @parent
-
-    <p>Single Movie</p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus tempora ratione enim sit, non voluptatum ex accusantium ducimus, quae eaque, iure odit explicabo. In, voluptatum officiis nesciunt iste repellat aliquid.
 @stop
 
 @section('content')
@@ -29,7 +28,7 @@
       <ul class="list-unstyled">
         @foreach ($movie->CastList as $castMember)
         <li>
-          {{ $castMember->ActorName }}
+          <a href="movies?keywords={{ $castMember->ActorName }}">{{ $castMember->ActorName }}</a>
         </li>
         @endforeach
       </ul>

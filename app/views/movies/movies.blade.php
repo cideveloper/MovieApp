@@ -31,8 +31,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" href="">
-            Filters:
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="pull-right">
+            Expand Filters
           </a>
           <span class="label label-primary">{{ $filter['genre'] }}</span>
           <span class="label label-success">{{ $filter['quality'] }}</span>
@@ -40,7 +40,7 @@
       </div>
       <div id="collapseOne" class="panel-collapse collapse in">
         <div class="panel-body">
-          {{ Form::open(['class' => 'form-inline clearfix', 'method' => 'GET']) }}
+          {{ Form::open(['class' => '', 'method' => 'GET']) }}
             <div class="form-group">
               <label for="genre">Genre: </label>
               {{ Form::select('genre', $genres, $filter['genre'], ['class' => 'form-control']); }}
@@ -56,6 +56,10 @@
             <div class="form-group">
               <label for="sort">Sort By: </label>
               {{ Form::select('sort', ['date' => 'date', 'seeds' => 'seeds', 'peers' => 'peers', 'size' => 'size', 'alphabet' => 'alphabet', 'rating' => 'rating', 'downloaded' => 'downloaded', 'year' => 'year'], $filter['sort'], ['class' => 'form-control']); }}
+            </div>
+            <div class="form-group">
+              <label for="sort">Keyword Search: </label>
+              {{ Form::text('keywords', $filter['keywords'], ['class' => 'form-control']); }}
             </div>
             <button type="submit" class="btn btn-default">Search</button>
           {{ Form::close() }}
