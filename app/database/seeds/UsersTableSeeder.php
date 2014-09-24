@@ -9,17 +9,18 @@ class UsersTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-/*		foreach(range(1, 10) as $index)
+		foreach(range(1, 20) as $index)
 		{
 			User::create([
         'email' => $faker->email,
-        'password' => Hash::make($faker->word)
+        'username' => $faker->userName,
+        'password' => $faker->password,
+        'name' => $faker->name,
+        'location' => $faker->country,
+        'website' => 'http://www.' . $faker->domainName,
+        'bio' => $faker->paragraph,
 			]);
-		}*/
-    User::create([
-      'email' => 'user@example.org',
-      'password' => 'password'
-    ]);
+		}
 	}
 
 }

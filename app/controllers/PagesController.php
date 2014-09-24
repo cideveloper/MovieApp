@@ -1,9 +1,27 @@
 <?php
 
+use MovieApp\Repositories\FollowRepositoryInterface;
+
 class PagesController extends \BaseController {
 
+  public function __construct(FollowRepositoryInterface $follow)
+  {
+    $this->follow = $follow;
+  }
+
   public function home(){
-    return View::make('pages.home');
+
+    $followers = [];
+    $following = [];
+
+    if (Auth::check())
+    {
+      $followers = $this->follow->getFollowers();
+      $following = $this->follow->getFollowing();
+      //dd($following);
+    }
+
+    return View::make('pages.home', compact('followers', 'following'));
   }
 
   public function themes(){

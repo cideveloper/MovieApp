@@ -127,6 +127,7 @@ return array(
 		'Laracasts\Validation\ValidationServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
 		'MovieApp\Providers\BackendServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
 
 	),
 
@@ -196,6 +197,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 		'cURL' 						  => 'anlutro\cURL\Laravel\cURL',
 		'Flash'             => 'Laracasts\Flash\Flash',
+		'Debugbar'          => 'Barryvdh\Debugbar\Facade',
 
 	),
 

@@ -13,7 +13,8 @@
 	},
 	"require-dev": {
 		"way/generators": "2.*",
-		"fzaninotto/faker": "v1.3.0"
+		"fzaninotto/faker": "1.5.*@dev",
+		"barryvdh/laravel-debugbar": "1.7.*@dev"
 	},
 	"autoload": {
 		"classmap": [
