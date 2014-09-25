@@ -1,9 +1,12 @@
 <?php
 
+use MovieApp\Repositories\FollowRepositoryInterface;
+
 class UsersController extends \BaseController {
 
-  public function __construct()
+  public function __construct(FollowRepositoryInterface $follow)
   {
+    $this->follow = $follow;
 		$this->beforeFilter('auth');
   }
 
@@ -26,7 +29,18 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$user = User::find($id);
+
+    $followers = [];
+    $following = [];
+
+    if (Auth::check())
+    {
+      $followers = $this->follow->getFollowers($id);
+      $following = $this->follow->getFollowing($id);
+    }
+
+		return View::make('users.show', compact('user', 'followers', 'following'));
 	}
 
 

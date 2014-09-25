@@ -20,7 +20,7 @@ class PagesController extends \BaseController {
       $following = $this->follow->getFollowing($this->current_user->id);
     }
 
-    return View::make('pages.home', compact('followers', 'following', 'data'));
+    return View::make('pages.home', compact('followers', 'following'));
   }
 
   public function themes(){

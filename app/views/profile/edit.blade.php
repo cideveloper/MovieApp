@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.full')
 
 @section('sidebar')
     @parent
@@ -6,16 +6,12 @@
 @stop
 
 @section('content')
-  <div class="page-header">
-    <h1>Edit Profile</h1>
-  </div>
   <div class="row">
     <div class="col-md-6 col-lg-4">
+      <div class="page-header">
+        <h1>Edit Profile</h1>
+      </div>
       @include('layouts.partials.errors')
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-lg-4">
       {{ Form::model($user, ['name' => 'profileUpdateForm']) }}
 
           <!-- Name Form Input -->

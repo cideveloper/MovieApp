@@ -19,11 +19,12 @@
             <li class="visible-sm-block"><a href="#">Small</a></li>
             @if ($currentUser)
               <li>{{ link_to_route('movies', 'Browse Movies') }}</li>
+              <li>{{ link_to_route('users.index', 'Users') }}</li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $currentUser->email }} <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li>{{ link_to_route('profile.edit', 'Edit Profile') }}</li>
-                  <li><a href="#">Another action</a></li>
+                  <li>{{ link_to_route('users.show', 'View Profile', [$currentUser->id]) }}</li>
                   <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
                   <li>{{ link_to_route('logout_path', 'Log Out') }}</li>

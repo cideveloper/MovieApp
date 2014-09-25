@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.full')
 
 @section('sidebar')
   @parent
@@ -20,12 +20,9 @@
           <!-- List group -->
           <div class="list-group">
             @foreach ($followers as $follower)
-              <a href="#" class="list-group-item">
+              <a href="{{ route('users.show', $follower->id) }}" class="list-group-item">
                 <h4 class="list-group-item-heading">ID: {{ $follower->id }}</h4>
                 <p class="list-group-item-text">email: {{ $follower->email }}</p>
-                <?php
-                  //var_dump($follower->user());
-                ?>
               </a>
             @endforeach
           </div>
@@ -38,12 +35,9 @@
           <!-- List group -->
           <div class="list-group">
             @foreach ($following as $following_user)
-              <a href="#" class="list-group-item">
+              <a href="{{ route('users.show', $following_user->id) }}" class="list-group-item">
                 <h4 class="list-group-item-heading">ID: {{ $following_user->id }}</h4>
                 <p class="list-group-item-text">email: {{ $following_user->email }}</p>
-                <?php
-                  //var_dump($following_user->user());
-                ?>
               </a>
             @endforeach
           </div>
