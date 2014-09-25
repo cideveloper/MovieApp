@@ -15,7 +15,7 @@ class BackendServiceProvider extends ServiceProvider {
     );
     $this->app->bind(
       'MovieApp\Repositories\FollowRepositoryInterface',
-      'MovieApp\Repositories\FollowRepository'
+      'MovieApp\Repositories\EloquentFollowRepository'
     );
   }
 

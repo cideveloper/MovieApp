@@ -16,12 +16,11 @@ class PagesController extends \BaseController {
 
     if (Auth::check())
     {
-      $followers = $this->follow->getFollowers();
-      $following = $this->follow->getFollowing();
-      //dd($following);
+      $followers = $this->follow->getFollowers($this->current_user->id);
+      $following = $this->follow->getFollowing($this->current_user->id);
     }
 
-    return View::make('pages.home', compact('followers', 'following'));
+    return View::make('pages.home', compact('followers', 'following', 'data'));
   }
 
   public function themes(){

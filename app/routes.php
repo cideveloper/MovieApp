@@ -79,6 +79,9 @@ Route::group(array('prefix' => 'profile'), function()
   ]);
 });
 
+//Route::get('users', 'UsersController@index');
+Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+
 /**
  * Misc
  */

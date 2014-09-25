@@ -21,7 +21,7 @@
           <div class="list-group">
             @foreach ($followers as $follower)
               <a href="#" class="list-group-item">
-                <h4 class="list-group-item-heading">ID: {{ $follower->follower_id }}</h4>
+                <h4 class="list-group-item-heading">ID: {{ $follower->id }}</h4>
                 <p class="list-group-item-text">email: {{ $follower->email }}</p>
                 <?php
                   //var_dump($follower->user());
@@ -39,7 +39,7 @@
           <div class="list-group">
             @foreach ($following as $following_user)
               <a href="#" class="list-group-item">
-                <h4 class="list-group-item-heading">ID: {{ $following_user->followed_id }}</h4>
+                <h4 class="list-group-item-heading">ID: {{ $following_user->id }}</h4>
                 <p class="list-group-item-text">email: {{ $following_user->email }}</p>
                 <?php
                   //var_dump($following_user->user());
