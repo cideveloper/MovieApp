@@ -9,7 +9,9 @@
         <div class="caption">
           <h3>{{ $user->username }}</h3>
           <p>{{ $user->bio }}</p>
-          <p><a href="#" class="btn btn-primary" role="button">Follow</a>
+          @unless ($user->is($currentUser))
+            @include ('users.partials.follow-button')
+          @endif
         </div>
       </div>
 

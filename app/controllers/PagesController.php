@@ -40,4 +40,10 @@ class PagesController extends \BaseController {
     return Response::view('errors.missing', array('code' => $code), 404);
   }
 
+  public function test()
+  {
+    $data = [];
+    return Response::view('pages.test', compact('data'));
+  }
+
 }

@@ -15,6 +15,16 @@ Route::get('/', [
   'uses' => 'PagesController@home'
 ]);
 
+Route::get('404/{code}', [
+  'as' => '404',
+  'uses' => 'PagesController@error404'
+]);
+
+Route::get('test', [
+  'as' => 'test',
+  'uses' => 'PagesController@test'
+]);
+
 /*
  * Registration!
  */
@@ -79,7 +89,6 @@ Route::group(array('prefix' => 'profile'), function()
   ]);
 });
 
-//Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
 Route::get('users', [
   'as' => 'users.index',
   'uses' => 'UsersController@index'
@@ -89,13 +98,20 @@ Route::get('{username}', [
   'as' => 'users.show',
   'uses' => 'UsersController@show'
 ]);
+
 /**
- * Misc
+ * Follows
  */
-Route::get('404/{code}', [
-  'as' => '404',
-  'uses' => 'PagesController@error404'
+Route::post('follows', [
+    'as' => 'follows_path',
+    'uses' => 'FollowsController@store'
 ]);
+
+Route::delete('follows/{id}', [
+    'as' => 'follow_path',
+    'uses' => 'FollowsController@destroy'
+]);
+
 /*
 Route::get('/', [
   'uses' => 'AngularController@home',
