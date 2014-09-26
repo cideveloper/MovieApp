@@ -36,8 +36,8 @@ class UsersController extends \BaseController {
 
     if (Auth::check())
     {
-      $followers = $this->follow->getFollowers($id);
-      $following = $this->follow->getFollowing($id);
+      $followers = $this->follow->getFollowers($user);
+      $following = $this->follow->getFollowing($user);
     }
 
 		return View::make('users.show', compact('user', 'followers', 'following'));

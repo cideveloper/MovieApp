@@ -2,8 +2,8 @@
 
 interface FollowRepositoryInterface {
 
-  public function getFollowers($id);
-  public function getFollowing($id);
+  public function getFollowers($user);
+  public function getFollowing($user);
 
 
 }
