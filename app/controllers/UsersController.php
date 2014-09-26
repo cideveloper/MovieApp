@@ -1,13 +1,15 @@
 <?php
 
 use MovieApp\Repositories\FollowRepositoryInterface;
+use MovieApp\Repositories\UserRepositoryInterface;
 
 class UsersController extends \BaseController {
 
-  public function __construct(FollowRepositoryInterface $follow)
+  public function __construct(FollowRepositoryInterface $follow, UserRepositoryInterface $userRepository)
   {
+    $this->beforeFilter('auth');
     $this->follow = $follow;
-		$this->beforeFilter('auth');
+    $this->userRepository = $userRepository;
   }
 
 	/**
@@ -17,19 +19,19 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-		$users = User::All();
+    $users = $this->userRepository->getPaginated(10);
 		return View::make('users.list', compact('users'));
 	}
 
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  string $username
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($username)
 	{
-		$user = User::find($id);
+		$user = $this->userRepository->findByUsername($username);
 
     $followers = [];
     $following = [];
