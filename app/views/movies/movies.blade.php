@@ -38,7 +38,7 @@
           <span class="label label-success">{{ $filter['quality'] }}</span>
         </h4>
       </div>
-      <div id="collapseOne" class="panel-collapse collapse in">
+      <div id="collapseOne" class="panel-collapse collapse">
         <div class="panel-body">
           {{ Form::open(['class' => '', 'method' => 'GET']) }}
             <div class="form-group">

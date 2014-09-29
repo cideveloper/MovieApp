@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid">
 
     @include('layouts.partials.nav')
 

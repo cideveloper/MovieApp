@@ -1,23 +1,26 @@
 @extends('layouts.full')
 
 @section('content')
-  <div class="panel panel-default">
-    <!-- Default panel contents -->
-    <div class="panel-heading">Users</div>
 
-    <!-- List group -->
-    <div class="list-group">
-      @foreach ($users as $user)
-        <a href="{{ route('users.show', $user->username) }}" class="list-group-item">
-          <span class="badge">Follow</span>
-          <h4 class="list-group-item-heading">{{ $user->username }}</h4>
-          <p class="list-group-item-text">
-            {{ $user->bio }}
-          </p>
-        </a>
-      @endforeach
-    </div>
+  <div class="users">
+    @foreach ($users->chunk(4) as $userSet)
+      <div class="row">
+        @foreach ($userSet as $user)
+          <div class="col-sm-3">
+            <div>
+              <a href="{{ route('users.show', $user->username) }}" class="user-block">
+                <img src="https://placeimg.com/400/400/people" alt="{{ $user->username }}" class="img-responsive" >
+                <div class="">
+                  {{ $user->username }}
+                </div>
+              </a>
+            </div>
+          </div>
+        @endforeach
+      </div>
+    @endforeach
   </div>
+
 
   {{ $users->links() }}
 @stop

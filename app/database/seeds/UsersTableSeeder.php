@@ -9,11 +9,11 @@ class UsersTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 20) as $index)
+		foreach(range(1, 500) as $index)
 		{
 			User::create([
         'email' => $faker->email,
-        'username' => $faker->userName,
+        'username' => $faker->userName . rand(1,1000),
         'password' => $faker->password,
         'name' => $faker->name,
         'location' => $faker->country,

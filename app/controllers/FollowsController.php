@@ -19,13 +19,13 @@ class FollowsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//$input = array_add(Input::get(), 'userId', Auth::id());
 
 		$this->userRepository->follow(Input::get('userIdToFollow'), Auth::id());
 
     Flash::success('You are now following this user.');
 
     return Redirect::back();
+
 	}
 
 	/**
@@ -37,13 +37,13 @@ class FollowsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-    //$input = array_add(Input::get(), 'userId', Auth::id());
 
     $this->userRepository->unfollow(Input::get('userIdToUnfollow'), Auth::id());
 
     Flash::success('You have now unfollowed this user.');
 
     return Redirect::back();
+
 	}
 
 }

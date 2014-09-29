@@ -1,9 +1,4 @@
-@extends('layouts.default')
-
-@section('sidebar')
-    @parent
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus tempora ratione enim sit, non voluptatum ex accusantium ducimus, quae eaque, iure odit explicabo. In, voluptatum officiis nesciunt iste repellat aliquid.
-@stop
+@extends('layouts.full')
 
 @section('content')
   <div class="row">

@@ -19,7 +19,7 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-    $users = $this->userRepository->getPaginated(10);
+    $users = $this->userRepository->getPaginated(18);
 		return View::make('users.list', compact('users'));
 	}
 

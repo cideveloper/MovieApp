@@ -94,7 +94,7 @@ Route::get('users', [
   'uses' => 'UsersController@index'
 ]);
 
-Route::get('{username}', [
+Route::get('@{username}', [
   'as' => 'users.show',
   'uses' => 'UsersController@show'
 ]);
