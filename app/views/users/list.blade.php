@@ -9,7 +9,7 @@
           <div class="col-sm-3">
             <div>
               <a href="{{ route('users.show', $user->username) }}" class="user-block">
-                <img src="https://placeimg.com/400/400/people" alt="{{ $user->username }}" class="img-responsive" >
+                <img src="{{ $user->profile_pic }}" alt="{{ $user->username }}" class="img-responsive" >
                 <div class="">
                   {{ $user->username }}
                 </div>

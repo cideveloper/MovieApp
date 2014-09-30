@@ -5,7 +5,7 @@
     <div class="col-sm-4 col-lg-3">
 
       <div class="thumbnail">
-        <img src="https://placeimg.com/700/500/people" alt="{{ $user->username }}" class="img-responsive" >
+        <img src="{{ $user->profile_pic }}" alt="{{ $user->username }}" class="img-responsive" >
         <div class="caption">
           <h3>{{ $user->username }}</h3>
           <p>{{ $user->bio }}</p>
@@ -35,7 +35,7 @@
               @foreach ($followers as $follower)
                 <li>
                   <a href="{{ route('users.show', $follower->username) }}">
-                    <img src="https://placeimg.com/40/40/people" alt="{{ $user->username }}">
+                    <img src="{{ $follower->profile_pic }}" alt="{{ $follower->username }}">
                   </a>
                   <div>{{ $follower->username }}</div>
                 </li>
@@ -48,8 +48,8 @@
             <ul class="friends-list clearfix">
               @foreach ($following as $followingUser)
                 <li>
-                  <a href="{{ route('users.show', $follower->username) }}">
-                    <img src="https://placeimg.com/40/40/people" alt="{{ $user->username }}">
+                  <a href="{{ route('users.show', $followingUser->username) }}">
+                    <img src="{{ $followingUser->profile_pic }}" alt="{{ $followingUser->username }}">
                   </a>
                   <div>{{ $followingUser->username }}</div>
                 </li>
