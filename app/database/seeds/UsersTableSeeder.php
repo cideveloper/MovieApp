@@ -9,7 +9,7 @@ class UsersTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
+		foreach(range(1, 1000) as $index)
 		{
       $genders = ['male', 'female'];
       $genders_key = array_rand($genders);
