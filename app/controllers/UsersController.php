@@ -35,6 +35,7 @@ class UsersController extends \BaseController {
 
     $followers = [];
     $following = [];
+    $posts = [];
 
     if (Auth::check())
     {
@@ -42,7 +43,7 @@ class UsersController extends \BaseController {
       $following = $this->follow->getFollowing($user);
     }
 
-		return View::make('users.show', compact('user', 'followers', 'following'));
+		return View::make('users.show', compact('user', 'followers', 'following', 'posts'));
 	}
 
 
