@@ -1,6 +1,6 @@
 <?php
 
-use MovieApp\Repositories\UserRepositoryInterface;
+use MovieApp\Users\UserRepositoryInterface;
 
 class FollowsController extends \BaseController {
 

@@ -1,6 +1,6 @@
 <?php
 
-use MovieApp\Repositories\MovieRepositoryInterface;
+use MovieApp\Movies\MovieRepositoryInterface;
 
 class MovieController extends \BaseController {
 

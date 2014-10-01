@@ -1,7 +1,7 @@
 <?php
 
-use MovieApp\Repositories\FollowRepositoryInterface;
-use MovieApp\Repositories\UserRepositoryInterface;
+use MovieApp\Users\FollowRepositoryInterface;
+use MovieApp\Users\UserRepositoryInterface;
 
 class UsersController extends \BaseController {
 

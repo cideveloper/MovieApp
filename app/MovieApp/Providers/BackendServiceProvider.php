@@ -10,16 +10,16 @@ class BackendServiceProvider extends ServiceProvider {
   public function register()
   {
     $this->app->bind(
-      'MovieApp\Repositories\MovieRepositoryInterface',
-      'MovieApp\Repositories\YTSMovieRepository'
+      'MovieApp\Movies\MovieRepositoryInterface',
+      'MovieApp\Movies\YTSMovieRepository'
     );
     $this->app->bind(
-      'MovieApp\Repositories\FollowRepositoryInterface',
-      'MovieApp\Repositories\EloquentFollowRepository'
+      'MovieApp\Users\FollowRepositoryInterface',
+      'MovieApp\Users\EloquentFollowRepository'
     );
     $this->app->bind(
-      'MovieApp\Repositories\UserRepositoryInterface',
-      'MovieApp\Repositories\UserRepository'
+      'MovieApp\Users\UserRepositoryInterface',
+      'MovieApp\Users\UserRepository'
     );
   }
 
