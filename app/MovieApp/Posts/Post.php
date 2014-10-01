@@ -2,7 +2,7 @@
 
 class Post extends \Eloquent {
 
-  protected $fillable = ['body'];
+  protected $fillable = ['post'];
 
   /**
    * A status belongs to a user.

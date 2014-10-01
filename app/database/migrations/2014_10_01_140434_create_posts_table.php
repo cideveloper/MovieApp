@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('user_id')->index();
-			$table->text('body');
+			$table->text('post');
 			$table->timestamps();
 		});
 	}

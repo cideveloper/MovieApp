@@ -37,6 +37,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     return in_array($this->id, $idsWhoOtherUserFollows);
   }
 
+  public function posts()
+  {
+    return $this->hasMany('MovieApp\Posts\Post');
+  }
+
   public function is($user)
   {
       if (is_null($user)) return false;

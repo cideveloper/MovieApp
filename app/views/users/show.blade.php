@@ -24,8 +24,13 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div class="tab-pane active" id="bio">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, voluptas. Repudiandae mollitia doloremque architecto numquam aut quos esse magnam voluptas facilis! Voluptatibus saepe excepturi quasi veritatis aliquam placeat labore dolores.
+        <div class="tab-pane active" id="posts">
+          @include ('posts.partials.post-form')
+          @foreach ($posts as $post)
+            <article>
+              {{ $post }}
+            </article>
+          @endforeach
         </div>
         <div class="tab-pane" id="followers">
 

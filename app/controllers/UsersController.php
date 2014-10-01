@@ -2,14 +2,19 @@
 
 use MovieApp\Users\FollowRepositoryInterface;
 use MovieApp\Users\UserRepositoryInterface;
+use MovieApp\Posts\PostRepositoryInterface;
 
 class UsersController extends \BaseController {
 
-  public function __construct(FollowRepositoryInterface $follow, UserRepositoryInterface $userRepository)
+  protected $follow;
+  protected $userRepository;
+
+  public function __construct(FollowRepositoryInterface $follow, UserRepositoryInterface $userRepository, PostRepositoryInterface $post)
   {
     $this->beforeFilter('auth');
     $this->follow = $follow;
     $this->userRepository = $userRepository;
+    $this->post = $post;
   }
 
 	/**

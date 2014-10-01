@@ -103,14 +103,23 @@ Route::get('@{username}', [
  * Follows
  */
 Route::post('follows', [
-    'as' => 'follows_path',
-    'uses' => 'FollowsController@store'
+  'as' => 'follows_path',
+  'uses' => 'FollowsController@store'
 ]);
 
 Route::delete('follows/{id}', [
-    'as' => 'follow_path',
-    'uses' => 'FollowsController@destroy'
+  'as' => 'follow_path',
+  'uses' => 'FollowsController@destroy'
 ]);
+
+/**
+ * Posts
+ */
+Route::post('posts', [
+  'as' => 'posts.store',
+  'uses' => 'PostsController@store'
+]);
+
 
 /*
 Route::get('/', [

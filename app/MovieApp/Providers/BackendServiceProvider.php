@@ -21,6 +21,10 @@ class BackendServiceProvider extends ServiceProvider {
       'MovieApp\Users\UserRepositoryInterface',
       'MovieApp\Users\UserRepository'
     );
+    $this->app->bind(
+      'MovieApp\Posts\PostRepositoryInterface',
+      'MovieApp\Posts\PostRepository'
+    );
   }
 
 }
