@@ -8,3 +8,5 @@ composer.phar
 .DS_Store
 Thumbs.db
 *.sublime-project
+
+tests/_output/*
