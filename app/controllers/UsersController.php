@@ -1,8 +1,11 @@
 <?php
-
+/**
+ * Remove Fake Posts in show method
+ */
 use MovieApp\Users\FollowRepositoryInterface;
 use MovieApp\Users\UserRepositoryInterface;
 use MovieApp\Posts\PostRepositoryInterface;
+use Faker\Factory as Faker;
 
 class UsersController extends \BaseController {
 
@@ -41,6 +44,12 @@ class UsersController extends \BaseController {
     $followers = [];
     $following = [];
     $posts = [];
+
+    $faker = Faker::create();
+    foreach(range(1, 10) as $index)
+    {
+      array_push($posts, ['post' => $faker->realText, 'created_at' => $faker->date . ' ' . $faker->time ]);
+    }
 
     if (Auth::check())
     {

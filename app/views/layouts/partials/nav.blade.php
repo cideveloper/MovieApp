@@ -18,6 +18,13 @@
             <li class="visible-md-block"><a href="#">Medium</a></li>
             <li class="visible-sm-block"><a href="#">Small</a></li>
             @if ($currentUser)
+              <li>
+                <form class="navbar-form" role="search">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    POST
+                  </button>
+                </form>
+              </li>
               <li>{{ link_to_route('movies', 'Browse Movies') }}</li>
               <li>{{ link_to_route('users.index', 'Users') }}</li>
               <li class="dropdown">
@@ -38,3 +45,4 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    @include ('posts.partials.post-form-modal')

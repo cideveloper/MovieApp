@@ -25,12 +25,14 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <div class="tab-pane active" id="posts">
-          @include ('posts.partials.post-form')
-          @foreach ($posts as $post)
-            <article>
-              {{ $post }}
-            </article>
-          @endforeach
+          <div class="list-group" style="margin-top: 20px;">
+            @foreach ($posts as $post)
+              <article class="list-group-item">
+                {{ $post['post'] }}
+                {{ $post['created_at'] }}
+              </article>
+            @endforeach
+          </div>
         </div>
         <div class="tab-pane" id="followers">
 
