@@ -2,6 +2,7 @@
 
 // Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
+use MovieApp\Users\User;
 
 class UsersTableSeeder extends Seeder {
 
@@ -28,6 +29,18 @@ class UsersTableSeeder extends Seeder {
         'profile_pic' => $faker->imageUrl(700, 500, $images_catagories[$images_catagories_key]) . rand(1,10),
 			]);
 		}
+
+    User::create([
+      'email' => 'test@test.com',
+      'username' => 'test',
+      'password' => 'test',
+      'name' => 'Test Name',
+      'gender' => 'male',
+      'location' => 'Canada',
+      'website' => 'http://www.testdomain.com',
+      'bio' => 'This is a test bio',
+      'profile_pic' => 'http://lorempixel.com/700/500/people/8'
+    ]);
 	}
 
 }
