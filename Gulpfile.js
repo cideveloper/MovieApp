@@ -14,11 +14,11 @@ var lr         = require('tiny-lr');
 var server     = lr();
 
 // Directories
-var lessDir = 'app/assets/less';
-var cssDir = 'public/assets/css';
+var lessDir     = 'app/assets/less';
+var cssDir      = 'public/assets/css';
 var sourceJSDir = 'app/assets/js';
-var destJSDir = 'public/assets/js';
-var bladeDir = 'app/views';
+var destJSDir   = 'public/assets/js';
+var bladeDir    = 'app/views';
 
 gulp.task('styles', function() {
   return gulp.src(lessDir + '/styles.less')
