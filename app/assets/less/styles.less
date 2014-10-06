@@ -3,27 +3,14 @@ body {
   padding-bottom: 60px;
 }
 
-.movie_container{
-
-}
-
 .movie_box{
   width: 120px;
   margin: 0 15px 10px 0;
   text-decoration: none;
-}
-
-.movie_box:hover{
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.movie_cover{
-
-}
-
-.movie_meta{
-
+  &:hover{
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 .movie_title{
@@ -32,18 +19,6 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.movie_year{
-
-}
-
-.sidebar.affix{
-  width: 247px;
-}
-
-.form-group.pull-right{
-  margin-right: 5px;
 }
 
 .movie-cover{
@@ -71,6 +46,55 @@ body {
 
 .home-movie.captainamerica{
   background-image: url(https://static.yts.re/attachments/Captain_America_The_Winter_Soldier_2014_1080p/Screenshot-09_large.png)
+}
+
+
+.users{
+  padding: 20px;
+}
+
+.user-block{
+  padding: 10px;
+  text-align: center;
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+  display: block;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  &:hover{
+    text-decoration: none;
+    -webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.4);
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.4);
+    -moz-transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
+  }
+}
+
+ul.friends-list{
+  padding: 0;
+  list-style: none;
+  li{
+    width: auto;
+    min-width: 170px;
+    border: 1px solid #e9ebec;
+    background: #f7f7f8;
+    padding: 5px;
+    margin: 0 0 5px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    img{
+      float: left;
+      margin-right: 10px;
+      width: 40px;
+    }
+  }
 }
 
 .animate-repeat.ng-move,
@@ -110,61 +134,17 @@ body {
   display: none !important;
 }
 
+.sidebar.affix{
+  width: 247px;
+}
+
+.form-group.pull-right{
+  margin-right: 5px;
+}
+
 .tab-pane{
   padding: 10px;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
-}
-.users{
-  padding: 20px;
-}
-
-.user-block{
-  padding: 10px;
-  text-align: center;
-  -webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.5);
-  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.5);
-  margin-bottom: 10px;
-  display: block;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-
-.user-block:hover{
-  text-decoration: none;
-  -webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.4);
-  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.4);
-  -moz-transform: scale(1.01);
-  -webkit-transform: scale(1.01);
-  -o-transform: scale(1.01);
-  -ms-transform: scale(1.01);
-  transform: scale(1.01);
-}
-
-ul.friends-list{
-  padding: 0;
-  list-style: none;
-}
-
-ul.friends-list li{
-  width: auto;
-  min-width: 170px;
-  /* margin-bottom: 20px; */
-  border: 1px solid #e9ebec;
-  background: #f7f7f8;
-  /* float: left; */
-  padding: 5px;
-  margin: 0 0 5px 0px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-ul.friends-list li img{
-  float: left;
-  margin-right: 10px;
-  width: 40px;
 }
