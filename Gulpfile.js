@@ -6,6 +6,7 @@ var gutil      = require('gulp-util');
 var less       = require('gulp-less');
 var minifycss  = require('gulp-minify-css');
 var uglify     = require('gulp-uglify');
+var changed    = require('gulp-changed');
 var rename     = require("gulp-rename");
 var concat     = require('gulp-concat');
 var filesize   = require('gulp-filesize');
@@ -45,6 +46,7 @@ gulp.task('scripts', function() {
 
 gulp.task('blade', function() {
   return gulp.src(bladeDir + '/**/*.blade.php')
+    .pipe(changed(bladeDir + '/**/*.blade.php'))
     .pipe(livereload(server));
 });
 
